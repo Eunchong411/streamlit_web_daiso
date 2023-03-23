@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+echo "backend: TkAgg" >> ~/.matplotlib/matplotlibrc
 import matplotlib.pyplot as plt
 # from matplotlib import pyplot as plt
 import matplotlib.font_manager as fm
