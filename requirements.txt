@@ -1,0 +1,7 @@
+streamlit
+pandas
+matplotlib
+seaborn==0.11.0
+numpy==1.18.5
+time
+pickle
