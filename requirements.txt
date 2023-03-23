@@ -1,9 +1,7 @@
 streamlit
 pandas
-matplotlib.pyplot
-matplotlib.font_manager
+matplotlib
 seaborn
-matplotlib.ticker
 numpy
 time
 pickle
