@@ -11,8 +11,8 @@ st.set_page_config(
     layout='wide')
 
 # 파일 불러오기
-df = pd.read_csv('data\dong_sex_count.csv')
-df = df.set_index('읍면동명', drop=True)
+df = pd.read_csv('data/dong_sex_count.csv', encoding='cp949')
+df = df.set_index('읍면동명', drop=True, encoding='cp949')
 
 # 한글 폰트 지정
 font_path = 'C:/Windows/Fonts/malgun.ttf'
