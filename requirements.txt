@@ -4,4 +4,3 @@ matplotlib
 seaborn
 numpy
 font_manager
-rc
