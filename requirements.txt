@@ -3,4 +3,3 @@ pandas
 matplotlib
 seaborn
 numpy
-matplotlib.font_manager
