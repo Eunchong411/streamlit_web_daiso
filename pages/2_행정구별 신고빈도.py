@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import font_manager,rc
 # from matplotlib import pyplot as plt
 import matplotlib.font_manager as fm
 import seaborn as sns
@@ -8,6 +9,8 @@ from  matplotlib.ticker import FuncFormatter
 import numpy as np
 import time
 import pickle
+
+
 
 st.set_page_config(
     page_title = '구급출동 데이터 분석',
@@ -20,7 +23,7 @@ df = df.set_index('시군구명')
 # 한글 폰트 지정
 font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
 font_name = fm.FontProperties(fname=font_path).get_name()
-plt.rc('font', family='NanumGothic')
+plt.rc('font', family=font_name)
 
 # 행정구별 신고빈도 df, 바그래프
 st.subheader(':white_check_mark:2021년도 행정구별 구급신고 빈도(전체)')
