@@ -1,0 +1,125 @@
+1. 계절별 신고빈도 분석
+season_cnt
+
+2. 월별 신고빈도 분석
+df_month_cnt
+
+3. 서울시 교통량조사 분석(요일/시간대)
+day_mean
+
+3-1. 서울시 교통량 히트맵(요일/시간대)
+weeks1 = ['월','화','수','목','금','토','일']
+plt.figure(figsize=(24,16))
+sns.heatmap(day_mean.agg(weeks1), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':10}, vmin = day_mean.min().min(), vmax = day_mean.max().max())
+plt.title('서울시 교통량 요일/시간대별', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+4. 이상치 제거 후 데이터프레임
+4-1. 이상치 제거 후 구간별 전체 신고빈도
+Distance_cnt
+
+4-2. 이상치 제거 후 구간별 평균값
+Distance_mean
+
+5. 데이터프레임
+# 전체 단/중거리
+sec1_pv
+sec2_pv
+
+5-1. 동별 히트맵 (단거리)
+# 수유동 단거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec1_pv.loc['수유동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.48)
+plt.title('수유동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 미아동 단거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec1_pv.loc['미아동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.48)
+plt.title('미아동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 봉천동 단거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec1_pv.loc['봉천동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.48)
+plt.title('봉천동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 신림동 단거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec1_pv.loc['신림동'], cmap='Reds', annot=True, fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.48)
+plt.title('신림동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 화곡동 단거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec1_pv.loc['화곡동'], cmap='Reds', annot=True, fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.48)
+plt.title('화곡동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+5-2. 동별 중거리 히트맵
+# 수유동 중거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec2_pv.loc['수유동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.90)
+plt.title('수유동 중거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 미아동 중거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec2_pv.loc['미아동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.90)
+plt.title('미아동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 봉천동 중거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec2_pv.loc['봉천동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.90)
+plt.title('봉천동 단거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 신림동 중거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec2_pv.loc['신림동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.90)
+plt.title('신림동 중거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+# 화곡동 중거리 히트맵
+plt.figure(figsize=(24,16))
+sns.heatmap(sec2_pv.loc['화곡동'].agg(weeks), cmap='Reds', annot=True,  fmt='.2f', annot_kws={'size':15}, vmin=0.34, vmax=0.90)
+plt.title('화곡동 중거리', fontsize=16)
+plt.xlabel('시간대', fontsize=12)
+plt.ylabel('요일', fontsize=12, rotation=0)
+
+plt.show()
+
+
+
