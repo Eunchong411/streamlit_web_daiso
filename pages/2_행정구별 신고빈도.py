@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
-import matplotlib
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
+# from matplotlib import pyplot as plt
 import matplotlib.font_manager as fm
 import seaborn as sns
 from  matplotlib.ticker import FuncFormatter
