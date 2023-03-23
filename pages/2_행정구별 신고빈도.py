@@ -19,7 +19,7 @@ df = df.set_index('시군구명')
 
 # 한글 폰트 지정
 font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
-# font_name = fm.FontProperties(fname=font_path).get_name()
+font_name = fm.FontProperties(fname=font_path).get_name()
 plt.rc('font', family='NanumGothic')
 
 # 행정구별 신고빈도 df, 바그래프
