@@ -18,7 +18,6 @@ df = pd.read_csv('data/gu_total_count.csv', encoding='cp949')
 df = df.set_index('시군구명')
 
 # 한글 폰트 지정
-fm.get_fontconfig_fonts()
 font_path = 'C:/Windows/Fonts/NanumGothic.ttf'
 font_name = fm.FontProperties(fname=font_path).get_name()
 plt.rc('font', family=font_name)
