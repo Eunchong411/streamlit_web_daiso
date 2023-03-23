@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
+from matplotlib import pyplot as plt
 import matplotlib.font_manager as fm
 import seaborn as sns
+from  matplotlib.ticker import FuncFormatter
+import numpy as np
+import time
+import pickle
 
 st.set_page_config(
     page_title = '구급출동 데이터 분석',
@@ -13,7 +17,7 @@ df = pd.read_csv('data\gu_total_count.csv', encoding='cp949')
 df = df.set_index('시군구명')
 
 # 한글 폰트 지정
-font_path = 'C:/Windows/Fonts/malgun.ttf'
+font_path = 'C:/Windows/Fonts/Arial.ttf'
 font_name = fm.FontProperties(fname=font_path).get_name()
 plt.rc('font', family=font_name)
 
