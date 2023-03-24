@@ -43,12 +43,12 @@ wedgeprops={'width': 0.7, 'edgecolor': 'w', 'linewidth': 5}
 
 fig, axs = plt.subplots(2,2)
 
-axs[0,0].set_title('<환자 성별 비율>', fontproperties=fontprop)
+axs[0,0].set_title('<환자 성별 비율>')
 axs[0,0].pie(df_sex['0'], labels=df_sex.환자성별구분명, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops, fontproperties=fontprop)
+            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
 
-axs[0,1].set_title('<환자 연령 비율>', fontproperties=fontprop)
-axs[0,1].bar(df_age['환자연령대'], df_age['환자비율'], color='skyblue', fontproperties=fontprop)
+axs[0,1].set_title('<환자 연령 비율>')
+axs[0,1].bar(df_age['환자연령대'], df_age['환자비율'], color='skyblue')
 axs[0,1].set_xticklabels(df_age['환자연령대'], rotation=40)
 for i in range(len(df_age)) :
     axs[0,1].text(i-0.2, df_age.loc[i,'환자비율'], round(df_age.loc[i,'환자비율']*100,1))
