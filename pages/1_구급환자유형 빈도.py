@@ -45,7 +45,7 @@ fig, axs = plt.subplots(2,2)
 
 axs[0,0].set_title('<환자 성별 비율>', fontproperties=fontprop)
 axs[0,0].pie(df_sex['0'], labels=df_sex.환자성별구분명, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
+            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops, textprops={'font':fontprop})
 
 axs[0,1].set_title('<환자 연령 비율>', fontproperties=fontprop)
 axs[0,1].bar(df_age['환자연령대'], df_age['환자비율'], color='skyblue')
