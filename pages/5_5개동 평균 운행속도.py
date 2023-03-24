@@ -5,6 +5,7 @@ import seaborn as sns
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import platform
+import matplotlib.font_manager as fm
 
 
 # 한글 폰트 지정
@@ -20,7 +21,9 @@ elif platform.system() == 'Windows':  # 윈도우
 else:
     print('Unknown system...  sorry~~~')
 
-
+# 한글폰트지정 2
+fontprop = fm.FontProperties(fname="font/NanumGothic.ttf")
+    
 st.set_page_config(
     page_title = '구급출동 데이터 분석',
     page_icon = ':ambulance:',
@@ -74,11 +77,11 @@ with col1 :
     plt.figure(figsize=(22, 12))
     sns.heatmap(data*60, vmax=data.max().max()*60, vmin=data.min().min()*60, cmap='Reds', annot=annot, annot_kws={'size': 25},
                 fmt='.0f')
-    plt.title(f'서울시 전체 : {button2} 현장 출동 평균시속', fontsize=40)
-    plt.xlabel('시간대', fontsize=30)
-    plt.xticks(fontsize=30)
-    plt.yticks(fontsize=30, rotation=0)
-    plt.ylabel('')
+    plt.title(f'서울시 전체 : {button2} 현장 출동 평균시속', fontsize=40, fontproperties=fontprop)
+    plt.xlabel('시간대', fontsize=30, fontproperties=fontprop)
+    plt.xticks(fontsize=30, fontproperties=fontprop)
+    plt.yticks(fontsize=30, rotation=0, fontproperties=fontprop)
+    plt.ylabel('', fontproperties=fontprop)
     st.pyplot(plt)
 
 with col2 :
@@ -93,8 +96,8 @@ with col2 :
     plt.figure(figsize=(22, 12))
     sns.heatmap(data2.loc[f'{button1}'].agg(weeks)*60, cmap='Reds', annot=annot, fmt='.0f', annot_kws={'size': 25}, vmin=data.min().min()*60,
                     vmax=data.max().max()*60)
-    plt.title(f'{button1} : {button2} 현장 출동 평균시속', fontsize=40)
-    plt.xlabel('시간대', fontsize=30)
-    plt.xticks(fontsize=30)
-    plt.yticks(fontsize=30, rotation=0)
+    plt.title(f'{button1} : {button2} 현장 출동 평균시속', fontsize=40, fontproperties=fontprop)
+    plt.xlabel('시간대', fontsize=30, fontproperties=fontprop)
+    plt.xticks(fontsize=30, fontproperties=fontprop)
+    plt.yticks(fontsize=30, rotation=0, fontproperties=fontprop)
     st.pyplot(plt)
