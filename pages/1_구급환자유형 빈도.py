@@ -89,9 +89,9 @@ axs2[0,0].set_title('<환자 성별 비율>')
 axs2[0,0].pie(dong_sex[dong_sex.index==dong].iloc[0,:], labels=dong_sex.columns, startangle=90,
             radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
 
-axs2[0,1].set_title('<환자 연령 비율>')
+axs2[0,1].set_title('<환자 연령 비율>',fontprop = fm.FontProperties)
 axs2[0,1].bar(dong_age.columns, dong_age[dong_age.index==dong].iloc[0,:], color='skyblue')
-axs2[0,1].set_xticklabels(dong_age.columns, rotation=50)
+axs2[0,1].set_xticklabels(dong_age.columns, rotation=50,fontprop = fm.FontProperties)
 
 
 axs2[1,0].set_title('<환자 발생 유형 비율>')
