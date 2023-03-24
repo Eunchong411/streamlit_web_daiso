@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import platform
 import matplotlib.font_manager as fm
 import seaborn as sns
+import matplotlib.font_manager as fm
 
 # 한글 폰트 지정
 from matplotlib import font_manager, rc
@@ -19,6 +20,9 @@ elif platform.system() == 'Windows':  # 윈도우
 else:
     print('Unknown system...  sorry~~~')
 
+
+# 한글폰트지정 2
+fontprop = fm.FontProperties(fname="font/NanumGothic.ttf")
 
 st.set_page_config(
     page_title = '구급출동 데이터 분석',
@@ -47,10 +51,10 @@ with col1 :
 with col2 :
     plt.figure(figsize=(15,10))
     sns.barplot(x=data.index, y='신고건수', data=data, color='skyblue')
-    plt.xlabel('시군구명', fontsize=15)
-    plt.ylabel('신고건수', fontsize=15)
-    plt.xticks(rotation=45, ha='right', fontsize=18)
-    plt.yticks(fontsize=20)
+    plt.xlabel('시군구명', fontsize=15, fontproperties=fontprop)
+    plt.ylabel('신고건수', fontsize=15, fontproperties=fontprop)
+    plt.xticks(rotation=45, ha='right', fontsize=18, fontproperties=fontprop)
+    plt.yticks(fontsize=20, fontproperties=fontprop)
     plt.grid('y')
     st.pyplot(plt)
 
@@ -68,9 +72,9 @@ with col3:
 with col4:
     plt.figure(figsize=(15,10))
     sns.barplot(x=df_1.index, y='신고건수', data=df_1, color='skyblue')
-    plt.xlabel('시군구명', fontsize=15)
-    plt.ylabel('신고건수', fontsize=15)
-    plt.xticks(rotation=45, ha='right', fontsize=18)
-    plt.yticks(fontsize=20)
+    plt.xlabel('시군구명', fontsize=15, fontproperties=fontprop)
+    plt.ylabel('신고건수', fontsize=15, fontproperties=fontprop)
+    plt.xticks(rotation=45, ha='right', fontsize=18, fontproperties=fontprop)
+    plt.yticks(fontsize=20, fontproperties=fontprop)
     plt.grid('y')
     st.pyplot(plt)
