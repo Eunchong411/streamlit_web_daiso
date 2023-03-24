@@ -56,11 +56,11 @@ for i in range(len(df_age)) :
 
 axs[1,0].set_title('<환자 발생 유형 비율>', fontproperties=fontprop)
 axs[1,0].pie(df_disease['0'], labels=df_disease.환자발생유형구분명, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors,wedgeprops=wedgeprops)
+            radius=1, autopct='%.1f%%', colors=colors,wedgeprops=wedgeprops, textprops={'font':fontprop})
 
 axs[1,1].set_title('<신고 계절 비율>', fontproperties=fontprop)
 axs[1,1].pie(df_season['계절 합계'], labels=df_season.계절구분명, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
+            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops, textprops={'font':fontprop})
 
 
 plt.tight_layout()
@@ -87,7 +87,7 @@ fig2, axs2 = plt.subplots(2,2)
 
 axs2[0,0].set_title('<환자 성별 비율>', fontproperties=fontprop)
 axs2[0,0].pie(dong_sex[dong_sex.index==dong].iloc[0,:], labels=dong_sex.columns, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
+            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops, textprops={'font':fontprop})
 
 axs2[0,1].set_title('<환자 연령 비율>', fontproperties=fontprop)
 axs2[0,1].bar(dong_age.columns, dong_age[dong_age.index==dong].iloc[0,:], color='skyblue')
@@ -96,11 +96,11 @@ axs2[0,1].set_xticklabels(dong_age.columns, rotation=50, fontproperties=fontprop
 
 axs2[1,0].set_title('<환자 발생 유형 비율>', fontproperties=fontprop)
 axs2[1,0].pie(dong_disease[dong_disease.index==dong].iloc[0,:], labels=dong_disease.columns, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
+            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops, textprops={'font':fontprop})
 
 axs2[1,1].set_title('<신고 계절 비율>', fontproperties=fontprop)
 axs2[1,1].pie(dong_season[dong_season.index==dong].iloc[0,:], labels=dong_season.columns, startangle=90,
-            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
+            radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops, textprops={'font':fontprop})
 
 plt.tight_layout()
 st.pyplot(plt)
