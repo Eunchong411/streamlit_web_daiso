@@ -6,6 +6,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import platform
+import matplotlib.font_manager as fm
 
 # 한글 폰트 지정
 from matplotlib import font_manager, rc
@@ -21,7 +22,9 @@ else:
     print('Unknown system...  sorry~~~')
 
 
-
+# 한글폰트지정 2
+fontprop = fm.FontProperties(fname="font/NanumGothic.ttf")
+    
 st.set_page_config(
     page_title = '구급출동 데이터 분석',
     page_icon = ':ambulance:',
@@ -54,42 +57,42 @@ if button == '시간대별' :
     dong_hour = time_df_new.pivot_table(index='읍면동명', columns='출동시', values='거리(km)/시간(분)', aggfunc='mean')*60
     plt.figure(figsize=(20, 10))
     sns.heatmap(dong_hour, vmax=dong_hour.max().max(), vmin=dong_hour.min().min(), cmap='Reds', annot=annot, annot_kws={'size': 20}, fmt='.0f')
-    plt.title('신고빈도 상위 20개동의 시간대별 평균 운행속도', fontsize=25)
-    plt.xlabel('출동시간대', fontsize=15)
-    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15)
-    plt.xticks(fontsize=20)
-    plt.yticks(fontsize=20, rotation=0)
+    plt.title('신고빈도 상위 20개동의 시간대별 평균 운행속도', fontsize=25, fontproperties=fontprop)
+    plt.xlabel('출동시간대', fontsize=15, fontproperties=fontprop)
+    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15, fontproperties=fontprop)
+    plt.xticks(fontsize=20, fontproperties=fontprop)
+    plt.yticks(fontsize=20, rotation=0, fontproperties=fontprop)
     st.pyplot(plt)
 elif button == '요일별' :
     dong_day = time_df_new.pivot_table(index='요일', columns='읍면동명', values='거리(km)/시간(분)', aggfunc='mean').agg(weeks).T*60
     plt.figure(figsize=(20, 10))
     sns.heatmap(dong_day, vmax=dong_day.max().max(), vmin=dong_day.min().min(), cmap='Reds', annot=annot, annot_kws={'size': 20}, fmt='.0f')
-    plt.title('신고빈도 상위 20개동의 요일별 평균 운행속도', fontsize=25)
-    plt.xlabel('출동요일', fontsize=15)
-    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15)
-    plt.xticks(fontsize=20)
-    plt.yticks(fontsize=20, rotation=0)
+    plt.title('신고빈도 상위 20개동의 요일별 평균 운행속도', fontsize=25, fontproperties=fontprop)
+    plt.xlabel('출동요일', fontsize=15, fontproperties=fontprop)
+    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15, fontproperties=fontprop)
+    plt.xticks(fontsize=20, fontproperties=fontprop)
+    plt.yticks(fontsize=20, rotation=0, fontproperties=fontprop)
     st.pyplot(plt)
 elif button == '월별' :
     dong_month = time_df_new.pivot_table(index=['읍면동명'], columns='출동월', values='거리(km)/시간(분)', aggfunc='mean')*60
     plt.figure(figsize=(20, 10))
     sns.heatmap(dong_month, vmax=dong_month.max().max(), vmin=dong_month.min().min(), cmap='Reds', annot=annot, annot_kws={'size': 20}, fmt='.0f')
-    plt.title('신고빈도 상위 20개동의 월별 평균 운행속도', fontsize=25)
-    plt.xlabel('출동월', fontsize=15)
-    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15)
-    plt.xticks(fontsize=20)
-    plt.yticks(fontsize=20, rotation=0)
+    plt.title('신고빈도 상위 20개동의 월별 평균 운행속도', fontsize=25, fontproperties=fontprop)
+    plt.xlabel('출동월', fontsize=15, fontproperties=fontprop)
+    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15, fontproperties=fontprop)
+    plt.xticks(fontsize=20, fontproperties=fontprop)
+    plt.yticks(fontsize=20, rotation=0, fontproperties=fontprop)
     st.pyplot(plt)
 else :
     dong_season = time_df_new.pivot_table(index=['계절구분명'], columns='읍면동명', values='거리(km)/시간(분)', aggfunc='mean').agg(season).T*60
     plt.figure(figsize=(20, 10))
     sns.heatmap(dong_season, vmax=dong_season.max().max(), vmin=dong_season.min().min(), cmap='Reds', annot=annot, annot_kws={'size': 20},
             fmt='.0f')
-    plt.title('신고빈도 상위 20개동의 계절별 평균 운행속도', fontsize=25)
-    plt.xlabel('출동계절', fontsize=15)
-    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15)
-    plt.xticks(fontsize=20)
-    plt.yticks(fontsize=20, rotation=0)
+    plt.title('신고빈도 상위 20개동의 계절별 평균 운행속도', fontsize=25, fontproperties=fontprop)
+    plt.xlabel('출동계절', fontsize=15, fontproperties=fontprop)
+    plt.ylabel('신고 빈도 상위 20개 동', fontsize=15, fontproperties=fontprop)
+    plt.xticks(fontsize=20, fontproperties=fontprop)
+    plt.yticks(fontsize=20, rotation=0, fontproperties=fontprop)
     st.pyplot(plt)
 
 
