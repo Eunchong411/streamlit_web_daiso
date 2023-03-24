@@ -22,7 +22,7 @@ else:
 
 # 한글폰트지정 2 
 
-fontprop = fm.FontProperties(fname="font/NanumGothic.ttf", size=24)
+fontprop = fm.FontProperties(fname="font/NanumGothic.ttf", size=18)
 
     
     
