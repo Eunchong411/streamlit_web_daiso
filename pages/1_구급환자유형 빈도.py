@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import platform
 import seaborn as sns
-
+import matplotlib.font_manager as fm
 
 
 # 한글 폰트 지정
@@ -20,6 +20,12 @@ elif platform.system() == 'Windows':  # 윈도우
 else:
     print('Unknown system...  sorry~~~')
 
+# 한글폰트지정 2 
+
+fontprop = fm.FontProperties(fname="font/NanumGothic.ttf", size=24)
+
+    
+    
 # 서울 전체 신고자 유형
 df_sex = pd.read_csv('./data/df_sex.csv')
 df_age = pd.read_csv('./data/df_age.csv', encoding='euc-kr')
@@ -36,11 +42,11 @@ wedgeprops={'width': 0.7, 'edgecolor': 'w', 'linewidth': 5}
 
 fig, axs = plt.subplots(2,2)
 
-axs[0,0].set_title('<환자 성별 비율>')
+axs[0,0].set_title('<환자 성별 비율>', fontproperties=fontprop)
 axs[0,0].pie(df_sex['0'], labels=df_sex.환자성별구분명, startangle=90,
             radius=1, autopct='%.1f%%', colors=colors, wedgeprops=wedgeprops)
 
-axs[0,1].set_title('<환자 연령 비율>')
+axs[0,1].set_title('<환자 연령 비율>', fontproperties=fontprop)
 axs[0,1].bar(df_age['환자연령대'], df_age['환자비율'], color='skyblue')
 axs[0,1].set_xticklabels(df_age['환자연령대'], rotation=40)
 for i in range(len(df_age)) :
