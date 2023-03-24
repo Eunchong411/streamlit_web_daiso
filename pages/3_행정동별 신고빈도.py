@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 import seaborn as sns
 from folium.plugins import MarkerCluster
+import matplotlib.font_manager as fm
 
 # 한글 폰트 지정
 from matplotlib import font_manager, rc
@@ -23,6 +24,9 @@ elif platform.system() == 'Windows':  # 윈도우
     rc('font', family=font_name)
 else:
     print('Unknown system...  sorry~~~')
+
+# 한글폰트지정 2
+fontprop = fm.FontProperties(fname="font/NanumGothic.ttf")
 
 
 # 페이지 설정
@@ -84,9 +88,9 @@ with col3 :
 
 with col4 :
     sns.barplot(x=dong_20.index, y='신고건수', data=dong_20, color='skyblue')
-    plt.xticks(rotation=45, ha='right')
-    plt.xlabel('읍면동명')
-    plt.ylabel('신고건수')
+    plt.xticks(rotation=45, ha='right', fontproperties=fontprop)
+    plt.xlabel('읍면동명', fontproperties=fontprop)
+    plt.ylabel('신고건수', fontproperties=fontprop)
     plt.grid('y')
     st.pyplot(plt)
 
@@ -103,8 +107,8 @@ with col5:
 
 with col6:
     sns.barplot(x=df_1.index, y='신고건수', data=df_1, color='skyblue')
-    plt.xticks(rotation=45, ha='right')
-    plt.xlabel('읍면동명')
-    plt.ylabel('신고건수')
+    plt.xticks(rotation=45, ha='right', fontproperties=fontprop)
+    plt.xlabel('읍면동명', fontproperties=fontprop)
+    plt.ylabel('신고건수', fontproperties=fontprop)
     plt.grid('y')
     st.pyplot(plt)
