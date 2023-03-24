@@ -1,6 +1,0 @@
-streamlit
-streamlit-folium
-matplotlib
-numpy
-pandas
-seaborn
